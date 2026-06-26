@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "start": "node server.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite --host"
@@ -17,6 +18,7 @@
     "@types/three": "^0.184.1",
     "autoprefixer": "^10.5.0",
     "canvas-confetti": "^1.9.4",
+    "express": "^5.2.1",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.18.0",
     "postcss": "^8.5.15",
