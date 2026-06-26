@@ -144,9 +144,9 @@ export function ControlPanel({
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => setIsOpen(true)}
-          className="absolute right-4 top-4 z-40 w-12 h-12 rounded-xl glass-panel flex items-center justify-center text-white hover:border-cyber-primary/60 transition-colors shadow-glass min-h-[48px] min-w-[48px]"
+          className="absolute right-4 top-4 z-40 w-12 h-12 2xl:w-16 2xl:h-16 rounded-xl glass-panel flex items-center justify-center text-white hover:border-cyber-primary/60 transition-colors shadow-glass min-h-[48px] min-w-[48px]"
         >
-          <Settings className="w-5 h-5 text-cyber-primary animate-pulse-slow" />
+          <Settings className="w-5 h-5 2xl:w-8 2xl:h-8 text-cyber-primary animate-pulse-slow" />
         </motion.button>
       )}
 
@@ -195,14 +195,14 @@ export function ControlPanel({
             className={`z-40 glass-panel shadow-glass flex flex-col ${
               isMobile
                 ? 'absolute bottom-0 left-0 right-0 max-h-[80vh] rounded-t-3xl border-t border-white/10'
-                : 'absolute right-0 top-0 bottom-0 w-96 border-l border-white/10'
+                : 'absolute right-0 top-0 bottom-0 w-96 2xl:w-[500px] border-l border-white/10'
             }`}
           >
             {/* Header / Tirador */}
-            <div className="p-4 border-b border-white/10 flex items-center justify-between shrink-0">
+            <div className="p-4 2xl:p-6 border-b border-white/10 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-2">
-                <Settings className="w-5 h-5 text-cyber-primary" />
-                <h3 className="font-bold text-white tracking-wide uppercase text-sm">Visualizador 3D</h3>
+                <Settings className="w-5 h-5 2xl:w-7 2xl:h-7 text-cyber-primary" />
+                <h3 className="font-bold text-white tracking-wide uppercase text-sm 2xl:text-lg">Visualizador 3D</h3>
               </div>
               <div className="flex items-center gap-2">
                 <button
@@ -241,13 +241,13 @@ export function ControlPanel({
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`flex-1 py-3 text-xs font-semibold flex flex-col items-center gap-1 border-b-2 transition-all ${
+                    className={`flex-1 py-3 2xl:py-5 text-xs 2xl:text-base font-semibold flex flex-col items-center gap-1 border-b-2 transition-all ${
                       activeTab === tab
                         ? 'border-cyber-primary text-cyber-primary bg-cyber-primary/5'
                         : 'border-transparent text-cyber-muted hover:text-white hover:bg-white/[0.01]'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
+                    <Icon className="w-4 h-4 2xl:w-6 2xl:h-6" />
                     <span>{label}</span>
                   </button>
                 );
@@ -462,17 +462,17 @@ export function ControlPanel({
                     <motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="space-y-2 bg-white/[0.02] border border-white/5 rounded-xl p-3"
+                      className="space-y-2 bg-white/[0.02] border border-white/5 rounded-xl p-3 2xl:p-5"
                     >
-                      <span className="text-xs font-semibold text-cyber-muted block">Color de Fondo</span>
+                      <span className="text-xs 2xl:text-base font-semibold text-cyber-muted block">Color de Fondo</span>
                       <div className="flex items-center gap-3 min-h-[48px]">
                         <input
                           type="color"
                           value={bgColor}
                           onChange={(e) => setBgColor(e.target.value)}
-                          className="w-10 h-10 rounded-lg cursor-pointer bg-transparent border-0"
+                          className="w-10 h-10 2xl:w-14 2xl:h-14 rounded-lg cursor-pointer bg-transparent border-0"
                         />
-                        <span className="text-sm font-mono text-white">{bgColor.toUpperCase()}</span>
+                        <span className="text-sm 2xl:text-lg font-mono text-white">{bgColor.toUpperCase()}</span>
                       </div>
                     </motion.div>
                   )}
@@ -502,10 +502,10 @@ export function ControlPanel({
 
                     <div className="grid grid-cols-2 gap-4 font-mono">
                       <div className="space-y-0.5">
-                        <span className="text-[10px] text-cyber-muted uppercase tracking-wider">
+                        <span className="text-[10px] 2xl:text-sm text-cyber-muted uppercase tracking-wider">
                           Triángulos
                         </span>
-                        <p className="text-base font-bold text-white">
+                        <p className="text-base 2xl:text-2xl font-bold text-white">
                           {triangles > 0 ? formatNumber(triangles) : 'N/A'}
                         </p>
                       </div>
@@ -541,9 +541,9 @@ export function ControlPanel({
 
                   <button
                     onClick={onOpenGuide}
-                    className="w-full py-3 rounded-xl bg-cyber-primary/10 border border-cyber-primary/20 text-xs font-bold text-cyber-primary hover:bg-cyber-primary/20 hover:text-white transition-all flex items-center justify-center gap-2 min-h-[48px]"
+                    className="w-full py-3 2xl:py-5 rounded-xl bg-cyber-primary/10 border border-cyber-primary/20 text-xs 2xl:text-base font-bold text-cyber-primary hover:bg-cyber-primary/20 hover:text-white transition-all flex items-center justify-center gap-2 min-h-[48px]"
                   >
-                    <Info className="w-4 h-4" />
+                    <Info className="w-4 h-4 2xl:w-6 2xl:h-6" />
                     Ver Guía de Optimización de Blender
                   </button>
                 </div>

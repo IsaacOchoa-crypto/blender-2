@@ -116,13 +116,13 @@ export default function App() {
 
       {/* Elegant HUD Logo Overlay */}
       <div className="absolute top-4 left-4 z-30 pointer-events-none select-none">
-        <div className="flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-2 rounded-xl">
-          <Box className="w-5 h-5 text-cyber-primary animate-pulse" />
+        <div className="flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-2 2xl:px-6 2xl:py-4 rounded-xl 2xl:rounded-2xl">
+          <Box className="w-5 h-5 2xl:w-8 2xl:h-8 text-cyber-primary animate-pulse" />
           <div>
-            <h1 className="text-xs font-black tracking-wider uppercase text-white font-mono leading-none">
+            <h1 className="text-xs 2xl:text-xl font-black tracking-wider uppercase text-white font-mono leading-none">
               Blender Web Render
             </h1>
-            <p className="text-[9px] text-cyber-muted font-mono leading-none mt-1">
+            <p className="text-[9px] 2xl:text-sm text-cyber-muted font-mono leading-none mt-1 2xl:mt-2">
               Mobile-First PBR Engine v1.0
             </p>
           </div>
@@ -184,23 +184,23 @@ export default function App() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               transition={{ type: 'spring', damping: 20 }}
-              className="glass-panel-glow p-6 sm:p-8 rounded-3xl max-w-xl w-full relative flex flex-col space-y-6"
+              className="glass-panel-glow p-6 sm:p-8 2xl:p-12 rounded-3xl max-w-xl 2xl:max-w-3xl w-full relative flex flex-col space-y-6 2xl:space-y-8"
             >
               {/* Close Button if we can revert to a model */}
               {(file || modelUrl) && (
                 <button
                   onClick={() => setShowUploader(false)}
-                  className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-cyber-muted hover:text-white transition-colors"
+                  className="absolute top-4 right-4 2xl:top-6 2xl:right-6 w-8 h-8 2xl:w-12 2xl:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-cyber-muted hover:text-white transition-colors"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-4 h-4 2xl:w-6 2xl:h-6" />
                 </button>
               )}
 
-              <div className="text-center space-y-2">
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-cyber-primary via-white to-cyber-secondary">
+              <div className="text-center space-y-2 2xl:space-y-4">
+                <h2 className="text-2xl sm:text-3xl 2xl:text-5xl font-extrabold text-white tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-cyber-primary via-white to-cyber-secondary">
                   Visor 3D de Blender
                 </h2>
-                <p className="text-xs sm:text-sm text-cyber-muted max-w-md mx-auto">
+                <p className="text-xs sm:text-sm 2xl:text-lg text-cyber-muted max-w-md 2xl:max-w-xl mx-auto">
                   Renderiza tus modelos exportados con iluminación global en tiempo real y optimizado para GPU móviles.
                 </p>
               </div>
@@ -213,21 +213,21 @@ export default function App() {
               />
 
               {/* Technical Notice */}
-              <div className="flex gap-3 bg-white/[0.02] border border-white/5 rounded-2xl p-4 text-left">
-                <HelpCircle className="w-5 h-5 text-cyber-primary shrink-0 mt-0.5" />
-                <div className="space-y-2 flex-grow">
+              <div className="flex gap-3 bg-white/[0.02] border border-white/5 rounded-2xl p-4 2xl:p-6 text-left">
+                <HelpCircle className="w-5 h-5 2xl:w-8 2xl:h-8 text-cyber-primary shrink-0 mt-0.5" />
+                <div className="space-y-2 2xl:space-y-3 flex-grow">
                   <div className="flex justify-between items-center">
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                    <h4 className="text-xs 2xl:text-base font-bold text-white uppercase tracking-wider">
                       Instrucciones de Blender
                     </h4>
                     <button
                       onClick={() => setShowGuide(true)}
-                      className="text-[10px] text-cyber-primary hover:text-white font-bold transition-colors uppercase tracking-wider bg-transparent border-0 cursor-pointer p-0"
+                      className="text-[10px] 2xl:text-sm text-cyber-primary hover:text-white font-bold transition-colors uppercase tracking-wider bg-transparent border-0 cursor-pointer p-0"
                     >
                       Ver Guía Completa
                     </button>
                   </div>
-                  <p className="text-[10px] text-cyber-muted leading-relaxed">
+                  <p className="text-[10px] 2xl:text-sm text-cyber-muted leading-relaxed">
                     Para un renderizado óptimo, exporta tu modelo como <span className="text-white">glTF 2.0 (.glb)</span> con las opciones de <span className="text-white">Format: Binary</span>, incluye los materiales/texturas correspondientes y asegúrate de aplicar las transformaciones (Ctrl+A en Blender) antes de exportar.
                   </p>
                 </div>
